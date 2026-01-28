@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #eaeaea;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .descricao {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 8px;
+            margin-top: 15px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .resultado {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f5f7ff;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            display: none;
+        }
+
+        .resultado.show {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .resultado-valor {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            margin-top: 8px;
+        }
+
+        .voltar {
+            margin-top: 20px;
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .voltar:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora oficial de adulto premium!!!</h1>
+
+        <div class="input-group">
+            <label for="idade">Qual sua idade?</label>
+            <input type="number" id="idade" placeholder="Digite um número" step="any">
+            <label for="resp">Qual seu nivel de responsabilidade?</label>
+            <input type="number" id="resp" placeholder="Digite um número" step="any">
+            <label for="exp">Qual seu nivel de experiencia de vida?</label>
+            <input type="number" id="exp" placeholder="Digite um número" step="any">
+            <label for="inf">Qual seu nivel de infantisse?</label>
+            <input type="number" id="inf" placeholder="Digite um número" step="any">
+        </div>
+
+        <button onclick="calcular()">Calcular</button>
+
+        <div class="resultado" id="resultado">
+            <div>Resultado:</div>
+            <div class="resultado-valor" id="resultado-valor"></div>
+        </div>
+
+        <a href="index.html" class="voltar">← Voltar para a página inicial</a>
+    </div>
+
+    <script>
+        function calcular() {
+            const idade = parseFloat(document.getElementById('idade').value);
+            const resp = parseFloat(document.getElementById('resp').value);
+            const exp = parseFloat(document.getElementById('exp').value);
+            const inf = parseFloat(document.getElementById('inf').value);
+            const resultadoDiv = document.getElementById('resultado');
+            const resultadoValor = document.getElementById('resultado-valor');
+            
+            const resultado = (idade * resp * exp) / inf;
+            
+            resultadoValor.textContent = resultado;
+            resultadoValor.style.color = '#667eea';
+            resultadoDiv.classList.add('show');
+        }
+    </script>
+</body>
+</html>
