@@ -41,18 +41,33 @@ body {
     border-radius: 50%;
 }
 
+@font-face {
+  font-family: 'GothamRnd';
+  src: url('fonts/GothamRnd-Book.woff2') format('woff2');
+
+}
+
 h1 {
     color: #fff;
     font-size: 32px;
     margin-bottom: 10px;
-    font-weight: 600;
+    font-weight: 800;
+    font-family: "GothamRnd", sans-serif;
 }
 
 h2 {
-    color: #282552;
-    font-size: 16px;
-    font-weight: 400;
-    font: "Fira Sans", sans-serif;
+    color: #2e2c52;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "GothamRnd", sans-serif;
+}
+
+h3 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 10;
+    font-family: "GothamRnd", sans-serif;
+    justify-content: left;
 }
 
 .bio {
@@ -80,7 +95,7 @@ h2 {
     text-decoration: none;
     mix-blend-mode: screen;
     isolation: isolate;
-    filter: brightness(1.8);
+    filter: brightness(500);
     transition: all 0.3s ease;
 }
 
@@ -91,8 +106,6 @@ h2 {
 
 .social-images:hover {
     transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    /* background: #fff; */
 }
 
 .social-images:active {
